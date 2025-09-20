@@ -21,7 +21,7 @@ class CartaJuego extends StatelessWidget {
         decoration: BoxDecoration(
           color: carta.volteada || carta.emparejada
             ? cons.blanco
-            : cons.morado,
+            : const Color.fromARGB(255, 62, 193, 249),
           borderRadius: BorderRadius.circular(8),
           border: Border.all(
             color: carta.emparejada
