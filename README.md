@@ -1,3 +1,5 @@
 # examen_parcial_uno
 
-A new Flutter project.
+Utilice el boton de configuración para cambiar el tamaño del grid
+Utilice el botón de reset, para reiniciar la partida 
+
