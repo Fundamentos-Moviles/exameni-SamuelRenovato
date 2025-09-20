@@ -52,7 +52,4 @@ class CartaJuego extends StatelessWidget {
         ),
     );
   }
-
-
-
 }
