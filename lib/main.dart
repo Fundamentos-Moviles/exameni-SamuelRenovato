@@ -1,3 +1,7 @@
+/// Alumno: Oscar Samuel Renovato Zapata
+/// Materia : Fundamentos de Desarrollo Móvil
+/// Fecha 19/09/2025
+
 import 'package:flutter/material.dart';
 import 'constantes.dart' as color;
 
