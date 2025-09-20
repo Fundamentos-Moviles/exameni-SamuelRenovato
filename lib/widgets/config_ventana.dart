@@ -32,7 +32,7 @@ class _ConfigVentanaState extends State<ConfigVentana>{
 
   @override
   Widget build(BuildContext context) {
-    return AlertDialog(
+    return AlertDialog(  ///AlertDialog para ventanas emergentes
       title: Text('Ajusta el tamaño del tablero deslizando'),
       content: Column(
         mainAxisSize: MainAxisSize.min,
@@ -74,6 +74,8 @@ class _ConfigVentanaState extends State<ConfigVentana>{
     );
   }
 
+
+  //Crea un deslizador para cambiar valores
   Widget barraSlider(String label, int value, Function(double) onChanged){
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
