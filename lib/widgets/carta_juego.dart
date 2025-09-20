@@ -45,7 +45,7 @@ class CartaJuego extends StatelessWidget {
                 )
               : Icon(
                   Icons.help_outline,
-                  color: Colors.white,
+                  color: cons.blanco,
                   size: 30,
                 ),
         ),  
