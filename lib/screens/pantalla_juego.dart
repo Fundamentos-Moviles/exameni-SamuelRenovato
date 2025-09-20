@@ -135,6 +135,75 @@ class _PantallaJuegoState extends State<PantallaJuego>{
   }
   
   void volteaCarta(int index) {
-    print('Carta volteada: ${cartas[index].value}');
+    if(enProceso||
+       cartas[index].volteada||
+       cartas[index].emparejada||
+       cartasVolteadas.length>=2){
+        return;
+       }
+
+    setState(() {
+      cartas[index].volteada = true;
+      cartasVolteadas.add(index);
+    });
+
+    if(cartasVolteadas.length ==2){
+      movimientos++;
+      validaPareja();
+    }
   }
+  
+  void validaPareja() {
+    enProceso = true;
+
+    Future.delayed(Duration(milliseconds: cons.ConstantesJuego.matchDelay),(){
+      int primeraCarta = cartasVolteadas[0];
+      int segundaCarta = cartasVolteadas[1];
+
+      if(cartas[primeraCarta].value == cartas[segundaCarta].value) {
+        setState(() {
+          cartas[primeraCarta].emparejada = true;
+          cartas[segundaCarta].emparejada = true;
+          pares++;
+        });
+
+        if(pares == (filas * cols )~/2) {
+          muestraVictoria();
+        }
+      } else {
+        setState(() {
+          cartas[primeraCarta].volteada = false;
+          cartas[segundaCarta].volteada = false;
+        });
+      }
+
+      setState(() {
+        cartasVolteadas.clear();
+        enProceso = false ;
+      });
+    });
+  }
+  
+  void muestraVictoria() {
+    showDialog(
+      context: context,
+      barrierDismissible: false, 
+      builder:(BuildContext context) {
+        return AlertDialog(
+          title: Text('¡Has ganado!'),
+          content: Text('Completaste el juego en $movimientos movimientos 😀'),
+          actions: [
+            TextButton(
+              onPressed:() {
+                Navigator.of(context).pop();
+                iniciaJuego();
+              }, 
+              child: Text('Nueva partida'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+  
 }
