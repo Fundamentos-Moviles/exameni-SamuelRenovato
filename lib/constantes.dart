@@ -5,6 +5,7 @@ const gris = Colors.grey;
 const blanco = Colors.white;
 const azul =Colors.blue;
 const morado = Colors.purple;
+const verde = Colors.lightGreen;
 
 class ConstantesJuego {
   static const int filasInicio = 4;
