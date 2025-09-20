@@ -16,6 +16,7 @@ class _PantallaJuegoState extends State<PantallaJuego>{
   int cols = cons.ConstantesJuego.columnasInicio;
   List<Carta> cartas = [];
   List<int> cartasVolteadas = [];
+  String autor ='Oscar Samuel Renovato Zapata';
   int movimientos = 0;
   int pares = 0 ; 
   bool enProceso = false;
@@ -70,8 +71,8 @@ class _PantallaJuegoState extends State<PantallaJuego>{
   Widget build(BuildContext context){
       return Scaffold(
           appBar: AppBar(
-              title: Text('Memorama'),
-              backgroundColor: cons.morado,
+              title: Text('Memorama- Oscar Samuel Renovato Zapata'),
+              backgroundColor: const Color.fromARGB(255, 234, 112, 255),
               actions: [
                 IconButton(
                   onPressed: _muestraConfigVentana,

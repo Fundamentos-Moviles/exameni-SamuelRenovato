@@ -2,6 +2,7 @@
 /// Materia : Fundamentos de Desarrollo Móvil
 /// Fecha 19/09/2025
 
+import 'package:examen_parcial_uno/screens/pantalla_juego.dart';
 import 'package:flutter/material.dart';
 import 'constantes.dart' as color;
 
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget{
           primarySwatch: color.azul,
           visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      home: PantallaJuego(),
     );
   }
 }
